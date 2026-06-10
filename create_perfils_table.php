@@ -18,7 +18,6 @@ return new class extends Migration
             ->onDelete('cascade');            
             $table->text('biografia');
             $table->string('telefone');
-            $table->string('especialidade');
             $table->timestamps();
         });
     }

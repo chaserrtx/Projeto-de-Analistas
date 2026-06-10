@@ -12,6 +12,6 @@ class UsuarioController extends Controller
 	}
 	public function criar()
 	{
-		return view('usuarios.criar');
+		return view('usuarios.crear');
 	}
 }

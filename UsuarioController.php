@@ -17,4 +17,15 @@ class UsuarioController extends Controller
 	{
 		return view('usuarios.crear');
 	}
+	
+	public function salvar(Request $request)
+	{
+		Usuario::create([
+		'nome' => $request->nome,
+		'email' => $request->email,
+		'senha' => $request->senha
+		]);
+		
+		return redirect('/usuarios');
+}		
 }

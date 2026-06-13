@@ -1,23 +1,22 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\PerfilController;
 
 Route::get('/', function () {
 	return view('index');
 });
 
-Route::get('/usuarios', function () {
-	return view('usuarios.index');
-});
+Route::get('/usuarios', 
+[UsuarioController::class, 'index']);
 
-Route::get('/usuarios/crear', function () {
-	return view('usuarios.crear');
-});
+Route::get('/usuarios/criar', 
+[UsuarioController::class, 'criar']);
 
-Route::get('/perfis', function () {
-	return view('perfis.index');
-});
+Route::post('/usuarios', [UsuarioController::class, 'salvar']);
 
-Route::get('/perfis/editar', function () {
-	return view('perfis.edit');
-});
+Route::get('/perfis', [PerfilController::class, 'index']);
+
+Route::get('/perfis/editar', [PerfilController::class, 'editar']);
+

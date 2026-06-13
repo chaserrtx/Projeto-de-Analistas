@@ -28,4 +28,10 @@ class UsuarioController extends Controller
 		
 		return redirect('/usuarios');
 }		
+	public function editar($id)
+	{
+		$usuario = Usuario::findOrFail($id);
+		
+		return view('usuarios.editar', compact('usuario'));
+}
 }

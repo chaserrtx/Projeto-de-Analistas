@@ -22,3 +22,5 @@ Route::get('/perfis/editar', [PerfilController::class, 'editar']);
 
 Route::get('/usuarios/{id}/editar', [UsuarioController::class, 'editar']);
 
+Route::delete('/usuarios/{id}', [UsuarioController::class, 'excluir']);
+

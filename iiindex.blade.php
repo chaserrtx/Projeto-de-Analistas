@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfis - PoliData</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 <body class="perfis-page d-flex flex-column min-vh-100">
     <header>
@@ -26,7 +26,7 @@
 				<h1 class="text-light">
 					Perfis Profissionais
 				</h1>
-				<a href="crear-perfil.html" class="btn btn-primary">Novo Perfil</a>				
+				<a href="/perfis/criar" class="btn btn-primary">Novo Perfil</a>				
 			</div>
 			<div class="table-container shadow">
 				<table class="table table-dark table-hover align-middle mb-0">
@@ -40,37 +40,23 @@
 						</tr>
 					</thead>
 					<tbody>
+						@forelse($perfis as $perfil)
 						<tr>
-							<td>1</td>
-							<td>Gabriela Avila</td>
-							<td>(11) 99999-9999</td>
-							<td>Analista de políticas públicas.</td>
+							<td>{{ $perfil->id }}</td>
+							<td>{{ $perfil->nome }}</td>
+							<td>{{ $perfil->telefone }}</td>
+							<td>{{ $perfil->biografia }}</td>
 							<td class="text-center">
 								<button class="btn btn-warning btn-sm">Editar</button>
-								<button class="btn btn-danger btn-sm">Excluir</button>							
-							</td>
-						</tr>
-						<tr>
-							<td>2</td>
-							<td>Gonzalo Rodriguez</td>
-							<td>(11) 99999-9999</td>
-							<td>Pesquisador em relações internacionais.</td>
-							<td class="text-center">
-								<button class="btn btn-warning btn-sm">Editar</button>
-								<button class="btn btn-danger btn-sm">Excluir</button>							
-							</td>							
-						</tr>
-						<tr>
-							<td>3</td>
-							<td>Ana Da Silva</td>
-							<td>(11) 99999-9999</td>
-							<td>Embaixadora.</td>
-							<td class="text-center">
-								<button class="btn btn-warning btn-sm">Editar</button>
-								<button class="btn btn-danger btn-sm">Excluir</button>							
+								<button class="btn btn-danger btn-sm">Excluir</button>
 							</td>
 						</tr>
 					</tbody>
+					@empty
+					<tr>
+						<td class="text-center" colspan="5">Nenhum perfil cadastrado</td>
+					</tr>
+					@endforelse
 				</table>
 			</div>		
 	   </main>

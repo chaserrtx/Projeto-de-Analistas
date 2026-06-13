@@ -34,4 +34,12 @@ class UsuarioController extends Controller
 		
 		return view('usuarios.editar', compact('usuario'));
 }
+	public function excluir($id)
+	}
+		$usuario = Usuario::findOrFail($id);
+		
+		$usuario->delete();
+		
+		return redirect('/usuarios');
+	}
 }

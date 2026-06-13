@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Perfil;
 
 class PerfilController extends Controller
 {
@@ -15,4 +16,11 @@ class PerfilController extends Controller
 	{
 		return view('perfis.edit');
 	}
+	
+	public function criar()
+	{
+		$usuarios = Usuario::all();
+		
+		return view('perfis.edit', compact('usuarios'));
+	
 }

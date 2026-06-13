@@ -20,3 +20,5 @@ Route::get('/perfis', [PerfilController::class, 'index']);
 
 Route::get('/perfis/editar', [PerfilController::class, 'editar']);
 
+Route::get('/usuarios/{id}/editar', [UsuarioController::class, 'editar']);
+

@@ -24,3 +24,10 @@ Route::get('/usuarios/{id}/editar', [UsuarioController::class, 'editar']);
 
 Route::delete('/usuarios/{id}', [UsuarioController::class, 'excluir']);
 
+Route::get('/perfis/criar', [PerfilController::class, 'criar']);
+
+Route::post('/perfis', [PerfilController::class, 'salvar']);
+
+Route::delete('/perfis/{id}', [PerfilController::class, 'excluir']);
+
+
